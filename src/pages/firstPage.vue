@@ -23,13 +23,14 @@
                 <v-expansion-panel>
                     <v-expansion-panel-content v-for="list in sideList">
                         <div slot="header">{{ list.title }}</div>
-
+                        <ul>
+                            <li v-for="item in list.list">
+                                <a :href="item.url" class="grey lighten-3">{{ item.name}}</a>
+                            </li>
+                        </ul>
                         <v-card v-for="item in list.list">
                             
                             <v-card-text :href="item.url" class="grey lighten-3">{{ item.name}}</v-card-text>
-                            <!-- 
-                            <a :href="item.url" class="grey lighten-3">{{ item.name}}</a>
- -->
                         </v-card>                        
                     </v-expansion-panel-content>
                 </v-expansion-panel>                
@@ -72,7 +73,11 @@ export default {
                         {
                             name: '房间信息',
                             url: ''
-                        }                                                
+                        },    
+                        {
+                            name: '表计信息',
+                            url: 'orderList'
+                        }                                            
                     ]
                 },
                 meterMana: {
