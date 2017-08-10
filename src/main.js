@@ -3,20 +3,27 @@ import Layout from './components/layout'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import IndexPage from './pages/index'
+import FirstPage from './pages/firstPage'
 import DetailPage from './pages/detail'
 import OrderListPage from './pages/orderList'
 import DetailAnaPage from './pages/detail/analysis'
 import DetailCouPage from './pages/detail/count'
 import DetailForPage from './pages/detail/forecast'
 import DetailPubPage from './pages/detail/publish'
+import Vuetify from 'vuetify'
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(Vuetify)
 let router = new VueRouter({
 	mode: 'history',
 	routes: [
 		{
 			path: '/',
 			component: IndexPage
+		},
+		{
+			path: '/first',
+			component: FirstPage
 		},
 		{
 			path: '/orderList',

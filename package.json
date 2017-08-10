@@ -12,7 +12,8 @@
     "lodash": "^4.16.4",
     "vue": "^2.0.1",
     "vue-resource": "^1.0.3",
-    "vue-router": "^2.0.1"
+    "vue-router": "^2.0.1",
+    "vuetify": "^0.14.8"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -37,6 +38,7 @@
     "ora": "^0.3.0",
     "shelljs": "^0.7.4",
     "url-loader": "^0.5.7",
+    "vue-collapsible": "^2.0.0",
     "vue-loader": "^9.4.0",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.2",
