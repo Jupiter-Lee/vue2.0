@@ -20,27 +20,16 @@
             </v-toolbar>
             <v-list class="pt-0" dense>
                 <v-divider></v-divider>
-                <v-list-tile v-for="item in items" :key="item.title">
-                    <v-list-tile-action>
-                        <v-icon>{{ item.icon }}</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
                 <v-expansion-panel>
-                    <v-expansion-panel-content v-for="(item,i) in 5" :key="i">
-                        <div slot="header">Item</div>
-                        <v-card>
-                            <v-card-text class="grey lighten-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
-                        </v-card>
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                <v-expansion-panel>
-                    <v-expansion-panel-content v-for="archive in archiveList">
-                        <div slot="header">档案管理</div>
-                        <v-card>
-                            <v-card-text class="grey lighten-3">{{ archive.title}}</v-card-text>
+                    <v-expansion-panel-content v-for="list in sideList">
+                        <div slot="header">{{ list.title }}</div>
+
+                        <v-card v-for="item in list.list">
+                            
+                            <v-card-text :href="item.url" class="grey lighten-3">{{ item.name}}</v-card-text>
+                            <!-- 
+                            <a :href="item.url" class="grey lighten-3">{{ item.name}}</a>
+ -->
                         </v-card>                        
                     </v-expansion-panel-content>
                 </v-expansion-panel>                
@@ -68,14 +57,57 @@ export default {
                 { title: 'Home', icon: 'dashboard' },
                 { title: 'About', icon: 'question_answer' }
             ],
-            archiveList: {
-                area: {
-                    title: '区域管理',
-                    url: ''
+            sideList: {
+                archiveMana: {
+                    title: '档案管理',
+                    list: [
+                        {
+                            name: '区域信息',
+                            url: ''
+                        },
+                        {
+                            name: '建筑物信息',
+                            url: ''
+                        },
+                        {
+                            name: '房间信息',
+                            url: ''
+                        }                                                
+                    ]
                 },
-                concentrator: {
-                    title: '集中器管理',
-                    url: ''
+                meterMana: {
+                    title: '抄表管理',
+                    list: [
+                        {
+                            name: '户表监控',
+                            url: ''
+                        },
+                        {
+                            name: '实时抄表',
+                            url: ''
+                        },
+                        {
+                            name: '数据补抄',
+                            url: ''
+                        }
+                    ]
+                },
+                maintainMana: {
+                    title: '运行维护',
+                    list: [
+                        {
+                            name: '集中器管理',
+                            url: ''
+                        },
+                        {
+                            name: '采集器管理',
+                            url: ''
+                        },
+                        {
+                            name: '路由操作',
+                            url: ''
+                        }
+                    ]
                 }
             },
             mini: false,
