@@ -58,6 +58,7 @@ let router = new VueRouter({
 new Vue({
   el: '#app',
   router,
-  template: '<Layout/>',
-  components: { Layout }
+  template: '<FirstPage/>',
+  components: { FirstPage }
+//   components: { Layout }
 })
